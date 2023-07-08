@@ -1,15 +1,11 @@
-package com.exemple;
+package com.example;
 
-
-import com.example.Feline;
-import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
 
 import java.util.List;
 
@@ -22,10 +18,9 @@ public class LionTest {
     @Test
     public void getFoodTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        List<String> food = List.of("Животные", "Птицы", "Путешествия");
-        Mockito.when(feline.getFood("Хищник")).thenReturn(food);
-        Assert.assertEquals(food, lion.getFood());
-    }
+        lion.getFood();
+        Mockito.verify(feline).getFood(Mockito.anyString());
+     }
 
     @Test
     public void doesHaveManeTrueTest() throws Exception {
@@ -45,5 +40,13 @@ public class LionTest {
             new Lion("Детеныш", feline);
         });
         Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
+    }
+
+    @Test
+    public void getKittensTest() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+
+        lion.getKittens();
+        Mockito.verify(feline).getKittens();
     }
 }

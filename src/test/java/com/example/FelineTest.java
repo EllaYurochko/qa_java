@@ -1,11 +1,31 @@
-package com.exemple;
-import com.example.Feline;
+package com.example;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 public class FelineTest {
+
+    public FelineTest() {
+        feline = Mockito.mock(Feline.class);
+    }
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Mock
+    Feline feline;
+
+
 
     @Test
     public void eatMeatTest() throws Exception {

@@ -1,6 +1,5 @@
-package com.exemple;
-import com.example.Cat;
-import com.example.Feline;
+package com.example;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -24,7 +23,7 @@ public class CatTest {
     @Test
     public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> food = List.of("Животные", "Птицы", "Рыбы");
+        List<String> food = List.of("Мясо");
         Mockito.when(feline.eatMeat()).thenReturn(food);
         Assert.assertEquals(food, cat.getFood());
     }
