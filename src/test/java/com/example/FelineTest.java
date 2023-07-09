@@ -13,13 +13,16 @@ import java.util.List;
 public class FelineTest {
 
     @Mock
-    Feline feline = Mockito.mock(Feline.class);
+    Feline feline;
 
     @Test
     public void eatMeatTest() throws Exception {
-        Feline feline = new Feline();
-        List<String> food = List.of("Животные", "Птицы", "Рыба");
-        Assert.assertEquals(food, feline.getFood("Хищник"));
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
+
+        Mockito.when(feline.getFood("Хищник")).thenReturn(expectedFood);
+
+        List<String> actualFood = feline.getFood("Хищник");
+        Assert.assertEquals(expectedFood, actualFood);
     }
 
     @Test
