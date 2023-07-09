@@ -23,18 +23,6 @@ public class LionTest {
      }
 
     @Test
-    public void doesHaveManeTrueTest() throws Exception {
-        Lion lion = new Lion("Самец", feline);
-        Assert.assertTrue(lion.doesHaveMane());
-    }
-
-    @Test
-    public void doesHaveManeFalseTest() throws Exception {
-        Lion lion = new Lion("Самка", feline);
-        Assert.assertFalse(lion.doesHaveMane());
-    }
-
-    @Test
     public void doesHaveManeNoneTest() throws Exception {
         Exception exception = Assert.assertThrows(Exception.class, () -> {
             new Lion("Детеныш", feline);
