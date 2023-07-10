@@ -9,20 +9,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-@RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-
-    @Mock
-    Feline feline;
 
     @Test
     public void eatMeatTest() throws Exception {
-        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-
-        Mockito.when(feline.getFood("Хищник")).thenReturn(expectedFood);
-
-        List<String> actualFood = feline.getFood("Хищник");
-        Assert.assertEquals(expectedFood, actualFood);
+        Feline feline = new Feline();
+        List<String> food = List.of("Животные", "Птицы", "Рыба");
+        Assert.assertEquals(food, feline.getFood("Хищник"));
     }
 
     @Test

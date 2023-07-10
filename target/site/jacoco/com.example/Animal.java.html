@@ -5,8 +5,8 @@ import java.util.List;
 <span class="fc" id="L5">public class Animal {</span>
 
     public List&lt;String&gt; getFood(String animalKind) throws Exception {
-<span class="pc bpc" id="L8" title="1 of 2 branches missed.">        if (&quot;Травоядное&quot;.equals(animalKind)) {</span>
-<span class="nc" id="L9">            return List.of(&quot;Трава&quot;, &quot;Различные растения&quot;);</span>
+<span class="fc bfc" id="L8" title="All 2 branches covered.">        if (&quot;Травоядное&quot;.equals(animalKind)) {</span>
+<span class="fc" id="L9">            return List.of(&quot;Трава&quot;, &quot;Различные растения&quot;);</span>
 <span class="fc bfc" id="L10" title="All 2 branches covered.">        } else if (&quot;Хищник&quot;.equals(animalKind)) {</span>
 <span class="fc" id="L11">            return List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;);</span>
         } else {
