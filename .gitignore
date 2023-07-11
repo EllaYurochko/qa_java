@@ -21,3 +21,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/target/jacoco.exec
+/target/classes/
+/target/generated-sources/
+/target/generated-test-sources/
+/target/maven-status/
+/target/maven-archiver/
+/target/surefire-reports/
+/target/test-classes/
